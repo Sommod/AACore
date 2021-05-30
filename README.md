@@ -19,5 +19,9 @@ This plugin is set in Spigot-1.16.1.RO-1. All classes that deal with version-spe
 are accounted within their file(s) or are converted via the <b>Converter</b> class within the API. Any version
 that is of 1.16.1 or higher will work without issue, anything prior to the 1.16.1 update may not work or cause
 errors. If you use a prior version, then ensure that the class(es) are compatible with the server version type.
+<h1>Miscellaneous Info</h1>
+This plugin contains a libs folder that has several plugins that are supported wtihin this plugin. While you do
+not need to implement them into your own to make your plugin work, the .jar files are available to use in the
+event you need direct access.
 <br><br><br><br>
 Thanks for using this plugin and hopefully it makes making plugins easier for you!
