@@ -1,0 +1,25 @@
+name: AACore
+authors: [Armeriness, Sommod]
+version: 2.2
+main: cold.fyre.IcyHot
+description: A library of data that is used in plugin creation.
+
+commands:
+  aacore:
+    usage: use /AACore help for more list of commands.
+    aliases: [aac, ac, core]
+    description: List, enables and disables AA-plugins.
+
+permissions:
+  aacore.*:
+    description: Super Command that contains all other aacore permissions.
+    children:
+      aacore.enable: true
+      aacore.disable: true
+    default: op
+  aacore.enable:
+    description: Allows enabling an AA-plugin.
+    default: op
+  aacore.disable:
+    description: Allows disabling an AA-plugin.
+    default: op

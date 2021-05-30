@@ -1,0 +1,13 @@
+#################################
+# +---------------------------+ #
+# |    AACore Configuration   | #
+# +---------------------------+ #
+#################################
+
+main:
+
+    # This determines if the commands can be used in-game, or are
+    # only available to be used in Console. Note that if this setting
+    # is turned to TRUE, then the commands will be disabled for all,
+    # including Opped players.
+    console only: false

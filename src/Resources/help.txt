@@ -1,0 +1,20 @@
+This file contains permissions and commands for this plugin. You can edit this file all you want as it is not
+edited by the plugin. If you need a new file simply delete the file and reload the plugin.
+
+Commands: < > - Required | [ ] - optional |
+[< >] - optional/required depending on command usage.
+
+/AACore - Shows plugin version and details (accessible to all players)
+/AACore Help [command] - Displays a list of commands or displays more information about command
+/AACore Enable <plugin> - Enables an AACore plugin.
+/AACore Disable <plugin> - Disables an AACore plugin.
+/AACore list - Lists all AACore and hard-dependent plugins.
+
+Permissions:
+aacore.* - All permissions
+aacore.enable - allows enabling an AACore plugin.
+aacore.disable - allows disabling an AACore plugin.
+
+Note:
+the 'Help' and 'List' command are available to anyone who has ANY of the above permissions.
+Opped players automatically have access to the permissions and commands above.
