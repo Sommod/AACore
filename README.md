@@ -1,0 +1,2 @@
+# AACore
+A Library plugin
