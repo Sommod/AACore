@@ -8,6 +8,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class PluginManager<J extends JavaPlugin> implements Listener {
 	
 	private final J plugin;
+	private FilesManager filesManager;
 	
 	public PluginManager(final J plugin) {
 		this.plugin = plugin;
@@ -18,6 +19,14 @@ public class PluginManager<J extends JavaPlugin> implements Listener {
 	
 	public void onStartup() { }
 	public void onShutdown() { }
+	
+	public void loadFilesManager(FilesManager filesManager) {
+		this.filesManager = filesManager;
+	}
+	
+	public FilesManager getFilesManager() {
+		return filesManager;
+	}
 	
 	@EventHandler
 	private void onDisable(PluginDisableEvent event) {
