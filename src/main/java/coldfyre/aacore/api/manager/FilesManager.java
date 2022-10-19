@@ -61,6 +61,9 @@ public class FilesManager {
 	}
 
 	public boolean mkdirDeep(File path, String name) {
+		if(contains("dir_" + name))
+			return false;
+		
 		File dir = new File(path, name);
 		files.put("dir_" + name, dir);
 
@@ -68,6 +71,9 @@ public class FilesManager {
 	}
 
 	private void createFile(String name) {
+		if(contains(name))
+			return;
+		
 		try {
 			files.get(name).createNewFile();
 		} catch (IOException e) {
@@ -162,6 +168,10 @@ public class FilesManager {
 	public boolean deleteDirectory(String name) {
 		return files.get("dir_" + name).delete();
 	}
+	
+	public void addFile(String name, String path, String fileName) {
+		addFile(name, new File(path.endsWith("/") ? path : path + "/" + fileName));
+	}
 
 	public void addFile(String name, File file) {
 		if (!files.containsKey(name))
@@ -183,6 +193,11 @@ public class FilesManager {
 
 	public void removeDirectory(String name) {
 		removeFile("dir_" + name);
+	}
+	
+	public void renameFile(String name, File to) {
+		files.get(name).renameTo(to);
+		files.put(name, to);
 	}
 
 	public Collection<File> getAllFiles() {
