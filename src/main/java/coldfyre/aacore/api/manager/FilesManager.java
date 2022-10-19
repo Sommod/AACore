@@ -13,7 +13,9 @@ import java.util.Set;
 
 import javax.annotation.Nonnull;
 
+import org.apache.commons.lang3.Validate;
 import org.bukkit.Bukkit;
+import org.bukkit.configuration.file.YamlConfiguration;
 
 public class FilesManager {
 
@@ -206,6 +208,36 @@ public class FilesManager {
 
 	public Set<String> getAllFileKeyNames() {
 		return files.keySet();
+	}
+	
+	public boolean isDirectory(String name) {
+		Validate.notNull(files.get(name));
+		
+		return files.get(name).isDirectory();
+	}
+	
+	public YamlConfiguration getConfiguration(String name) {
+		Validate.notNull(files.get(name));
+		
+		if(isDirectory(name))
+			throw new IllegalArgumentException("Error, the given value name for the file " + name + " is a Directory. Must be a file to get a YamlConfiguration Object.");
+		
+		return YamlConfiguration.loadConfiguration(files.get(name));
+	}
+	
+	public YamlConfiguration getConfig() {
+		File conf = new File(basePath, "config.yml");
+		
+		if(!conf.exists()) {
+			try {
+				conf.createNewFile();
+				return YamlConfiguration.loadConfiguration(conf);
+			} catch (IOException e) {
+				logException(e);
+				return null;
+			}
+		} else
+			return YamlConfiguration.loadConfiguration(conf);
 	}
 
 	public static void logException(Exception e) {
