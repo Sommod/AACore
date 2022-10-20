@@ -1,0 +1,12 @@
+name: AACore
+version: 1.0
+api-version: 1.19.2
+main: coldfyre.aacore.AACore
+author: Sommod
+description: A Library plugin.
+
+commands:
+  aacore:
+    usage: /AACore Help for list of commands
+    description: Base command for AACore
+    aliases: [aac, core]
