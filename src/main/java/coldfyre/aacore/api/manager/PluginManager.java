@@ -11,7 +11,12 @@ public class PluginManager<J extends JavaPlugin> implements Listener {
 	private FilesManager filesManager;
 	
 	public PluginManager(final J plugin) {
+		this(plugin, null);
+	}
+	
+	public PluginManager(final J plugin, FilesManager filesManager) {
 		this.plugin = plugin;
+		this.filesManager = filesManager;
 		onStartup();
 	}
 	
