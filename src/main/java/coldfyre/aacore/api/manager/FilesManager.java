@@ -190,7 +190,7 @@ public class FilesManager {
 	}
 
 	public void removeFile(String name) {
-		files.get(name).delete();
+		files.remove(name);
 	}
 
 	public void removeDirectory(String name) {
